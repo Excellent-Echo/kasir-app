@@ -1,0 +1,22 @@
+form {
+    background-color: burlywood;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    border: 1px solid;
+    box-shadow: 5px 10px #888888;
+    width: 20rem;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px 20px 10px 20px;
+}
+
+form .button-submit {
+    margin: auto;
+    margin-bottom: 10px;
+    width: 50%;
+}
