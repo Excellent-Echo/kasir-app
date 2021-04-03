@@ -1,5 +1,3 @@
-import TableTotalPrice from './TableTotalPrice'
-
 const TableDisplayItems = ({ item, index }) => {
     return (
         <tbody>
