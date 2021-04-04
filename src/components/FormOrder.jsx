@@ -2,16 +2,6 @@ import React, { useState } from "react";
 
 import './FormOrder.css';
 
-// class FormOrder extends React.Component {
-//     constructor(props) {
-//         super(props)
-//         this.state = {
-//             nama: "",
-//             harga: "",
-//             quantity: "",
-//         }
-//     }
-
 const FormOrder = ({handleAddItem}) => {
     const [namaBarang, setNamaBarang] = useState("");
     const [hargaBarang, setHargaBarang] = useState("");
@@ -20,7 +10,8 @@ const FormOrder = ({handleAddItem}) => {
     const handleForm = (e) => {
         e.preventDefault();
 
-        if (!namaBarang) {
+        if (!namaBarang || !Number(hargaBarang) || !Number(quantity)) {
+            alert("Nama Barang tidak boleh kosong/Tipe data Harga Barang dan Quantity salah")
             return;
         }
         
