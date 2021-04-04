@@ -4,6 +4,7 @@ import './OrderPage.css';
 
 import FormOrder from "./FormOrder";
 import DisplayListItems from "./DisplayListItems";
+import TotalBelanja from "./TotalBelanja";
 
 const OrderPage = () => {
     const [orderItems, setOrderItems] = useState([]);
@@ -30,6 +31,9 @@ const OrderPage = () => {
                 handleAddItem={handleAddItem}
             />
             <DisplayListItems 
+                orderItems={orderItems}
+            />
+            <TotalBelanja 
                 orderItems={orderItems}
             />
         </div>

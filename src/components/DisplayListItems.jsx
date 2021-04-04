@@ -10,9 +10,9 @@ const DisplayListItems = ({ orderItems }) => {
                     <tr>
                         <th>No.</th>
                         <th>Nama Barang</th>
-                        <th>Harga</th>
+                        <th>Harga (Rp)</th>
                         <th>Quantity</th>
-                        <th>Total Harga</th>
+                        <th>Total Harga (Rp)</th>
                     </tr>
                 </thead>
                 {orderItems.map((item, index) => {
