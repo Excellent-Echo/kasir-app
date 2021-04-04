@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 
 // components
 import FormOrder from "./FormOrder";
+import DisplayListItems from "./DisplayListItems";
+import TotalPriceItem from "./TotalPriceItem";
 
 function OrderPage() {
   const [orderItems, setOrderItems] = useState([]);
@@ -19,6 +21,7 @@ function OrderPage() {
     <div>
       <FormOrder handleAddItem={handleAddItem} />
       <DisplayListItems orderItems={orderItems} />
+      <TotalPriceItem orderItems={orderItems} />
     </div>
   );
 }
