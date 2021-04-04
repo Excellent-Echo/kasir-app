@@ -1,5 +1,7 @@
 import React from "react";
 
+import './OrderPage.css';
+
 const TotalBelanja = ({ orderItems }) => {
     let totalBelanja = orderItems.reduce((total, {quantity, hargaBarang}) => 
     total + quantity * hargaBarang, 0)

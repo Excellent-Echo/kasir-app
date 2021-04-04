@@ -17,15 +17,15 @@ const DisplayListItems = ({ orderItems }) => {
                 </thead>
                 {orderItems.map((item, index) => {
                     return (
-                    <tbody>
-                        <tr>
-                            <td>{index + 1}</td>
-                            <td>{item.namaBarang}</td>
-                            <td>{item.hargaBarang}</td>
-                            <td>{item.quantity}</td>
-                            <td>{item.quantity * item.hargaBarang}</td>
-                        </tr>
-                    </tbody>
+                        <tbody>
+                            <tr>
+                                <td>{index + 1}</td>
+                                <td>{item.namaBarang}</td>
+                                <td>{item.hargaBarang}</td>
+                                <td>{item.quantity}</td>
+                                <td>{item.quantity * item.hargaBarang}</td>
+                            </tr>
+                        </tbody>
                     )
                 })}
             </table>
