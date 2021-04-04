@@ -12,6 +12,7 @@ const DisplayListItems = ({ orderItems }) => {
                         <th>Nama Barang</th>
                         <th>Harga</th>
                         <th>Quantity</th>
+                        <th>Total Harga</th>
                     </tr>
                 </thead>
                 {orderItems.map((item, index) => {
@@ -22,6 +23,7 @@ const DisplayListItems = ({ orderItems }) => {
                             <td>{item.namaBarang}</td>
                             <td>{item.hargaBarang}</td>
                             <td>{item.quantity}</td>
+                            <td>{item.quantity * item.hargaBarang}</td>
                         </tr>
                     </tbody>
                     )

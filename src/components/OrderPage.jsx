@@ -31,9 +31,6 @@ const OrderPage = () => {
             />
             <DisplayListItems 
                 orderItems={orderItems}
-                // namaBarang={namaBarang}
-                // hargaBarang={hargaBarang}
-                // quantity={quantity}
             />
         </div>
     );
