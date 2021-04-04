@@ -10,7 +10,7 @@ function DisplayListItems({ orderItems }) {
             <p>Barang : {item.barang}</p>
             <p>Harga : {item.harga}</p>
             <p>Kuantitas : {item.quantity}</p>
-            <p>Total Harga : {item.quantity * item.harga}</p>
+            <h3>Total Harga : {item.quantity * item.harga}</h3>
           </div>
         ))}
       </div>

@@ -18,6 +18,7 @@ function OrderPage() {
   return (
     <div>
       <FormOrder handleAddItem={handleAddItem} />
+      <DisplayListItems orderItems={orderItems} />
     </div>
   );
 }
