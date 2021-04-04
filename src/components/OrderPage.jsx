@@ -5,10 +5,29 @@ import './OrderPage.css';
 import FormOrder from "./FormOrder";
 
 const OrderPage = () => {
+    const [orderItems, setOrderItems] = useState([]);
+
+    useEffect(() => {
+        console.log(orderItems);
+    }, [orderItems]);
+
+    const handleAddItem = (namaBarang, hargaBarang, quantity) => {
+        const newOrderItems = [
+            ...orderItems,
+            {
+                namaBarang,
+                hargaBarang,
+                quantity
+            }
+        ]
+        setOrderItems(newOrderItems);
+    }
 
     return (
         <div className="root">
-            <FormOrder />
+            <FormOrder
+                handleAddItem={handleAddItem}
+            />
         </div>
     );
 };

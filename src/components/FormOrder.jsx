@@ -1,101 +1,80 @@
-import React from "react";
+import React, { useState } from "react";
 
 import './FormOrder.css';
 
-class FormOrder extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            nama: "",
-            harga: "",
-            quantity: "",
-        };
-    }
+// class FormOrder extends React.Component {
+//     constructor(props) {
+//         super(props)
+//         this.state = {
+//             nama: "",
+//             harga: "",
+//             quantity: "",
+//         }
+//     }
 
-    handleForm = (e) => {
+const FormOrder = ({handleAddItem}) => {
+    const [namaBarang, setNamaBarang] = useState("");
+    const [hargaBarang, setHargaBarang] = useState("");
+    const [quantity, setQuantity] = useState("");
+
+    const handleForm = (e) => {
         e.preventDefault();
 
-        if (!Number(this.state.harga) || !Number(this.state.quantity)) {
-            alert("Quantity dan harga barang harus number");
+        if (!namaBarang) {
+            return;
         }
-        console.log({
-            nama: this.state.nama,
-            harga: this.state.harga,
-            quantity: this.state.quantity
-        });
+        
+        handleAddItem(namaBarang, hargaBarang, quantity);
 
-        e.target.reset();
-        this.setState({
-            nama: "",
-            harga: "",
-            quantity: "",
-        })
+        setNamaBarang("");
+        setHargaBarang("");
+        setQuantity("");
     }
 
-    handleInputNama = (e) => {
-        this.setState({
-            nama: e.target.value,
-        })
-    }
-
-    handleInputHarga = (e) => {
-        this.setState({
-            harga: e.target.value,
-        })
-    }
-
-    handleInputQty = (e) => {
-        this.setState({
-            quantity: e.target.value,
-        })
-    }
-
-    render() {
-        return (
-            <form onSubmit={this.handleForm}>
-                <div className="nama-barang">
-                    <label htmlFor="namaBarang" className="nama-barang">
-                        Nama Barang
+    return (
+        <form onSubmit={handleForm}>
+            <div className="nama-barang">
+                <label htmlFor="namaBarang" className="nama-barang">
+                    Nama Barang
                     </label>
-                    <input
-                        type="text"
-                        id="namaBarang"
-                        name="nama"
-                        value={this.state.nama}
-                        onChange={this.handleInputNama}
-                    />
-                </div>
-                <div className="harga-barang">
-                    <label htmlFor="hargaBarang" className="nama-barang">
-                        Harga Barang
+                <input
+                    type="text"
+                    id="namaBarang"
+                    name="nama"
+                    value={namaBarang}
+                    onChange={(e) => setNamaBarang(e.target.value)}
+                />
+            </div>
+            <div className="harga-barang">
+                <label htmlFor="hargaBarang" className="nama-barang">
+                    Harga Barang
                     </label>
-                    <input
-                        type="text"
-                        id="hargaBarang"
-                        name="harga"
-                        value={this.state.harga}
-                        onChange={this.handleInputHarga}
+                <input
+                    type="text"
+                    id="hargaBarang"
+                    name="harga"
+                    value={hargaBarang}
+                    onChange={(e) => setHargaBarang(e.target.value)}
 
-                    />
-                </div>
-                <div className="qty-barang">
-                    <label htmlFor="qtyBarang" className="qty-barang">
-                        Quantity
+                />
+            </div>
+            <div className="qty-barang">
+                <label htmlFor="qtyBarang" className="qty-barang">
+                    Quantity
                     </label>
-                    <input
-                        type="text"
-                        id="qtyBarang"
-                        name="quantity"
-                        value={this.state.quantity}
-                        onChange={this.handleInputQty}
-                    />
-                </div>
-                <div className="button-submit">
-                    <input type="submit" value="Submit" />
-                </div>
-            </form>
-        );
-    }
+                <input
+                    type="text"
+                    id="qtyBarang"
+                    name="quantity"
+                    value={quantity}
+                    onChange={(e) => setQuantity(e.target.value)}
+                />
+            </div>
+            <div className="button-submit">
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
+    );
 };
 
 export default FormOrder;
