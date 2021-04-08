@@ -1,7 +1,11 @@
 import {GET_LIST_ORDER} from '../actionType/actionTypes';
 
 const initialState = {
-    listOrder: '',
+    listOrder: {
+        nama: '',
+        quantity: '',
+        price: '',
+    },
 }
 
 const listOrderReducer = (state = initialState, action) => {
