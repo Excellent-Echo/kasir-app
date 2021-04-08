@@ -17,18 +17,26 @@ const DisplayListItem = ({orderList}) => {
                     <td>
                         Harga Barang
                     </td>
+                    <td>
+                        Total
+                    </td>
                 </thead>
-            </table>
+            
             {orderList.map((item, index)=>{
-            return(         
+         
+            return(   
+                <>    
                 <tbody>
                     <td>{index+1}</td>
                     <td>{item.inputNamaBarang}</td>
                     <td>{item.inputQuantityBarang}</td>
                     <td>{item.inputHargaBarang}</td>
+                    <td>{item.inputQuantityBarang * item.inputHargaBarang}</td>
                 </tbody>
+                </>
             )
             })}
+            </table>
         </div>
     )
 }

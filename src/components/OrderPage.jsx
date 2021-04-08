@@ -19,6 +19,13 @@ const OrderPage = () => {
             }
         ]
         setOrderItems(stateOrderItems);
+
+        if((!Number(inputQuantityBarang))||(!Number(inputHargaBarang))){
+            alert('Quantity barang atau Nama barang harus berupa number')
+        }
+        if(!inputHargaBarang){
+            alert('Nama barang harus diisi')
+        }
     }
     return (
         <div>
