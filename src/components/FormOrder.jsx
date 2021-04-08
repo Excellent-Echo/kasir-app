@@ -1,6 +1,11 @@
 import React from 'react';
 
 const FormOrder = () => {
+
+    // const handleFormOrder = () =>{
+
+    // }
+
     return (
         <form>
             <div>
@@ -9,7 +14,7 @@ const FormOrder = () => {
             </div>
             <div>
                 <label>Quantity :</label>
-                <input type="number" name="" id=""/>
+                <input type="text" name="" id=""/>
             </div>
             <div>
                 <label>Price :</label>
