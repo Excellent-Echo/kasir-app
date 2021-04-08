@@ -7,6 +7,7 @@ const OrderItem = ({orderItem}) => {
             <span className="d-block">Nama Barang : {orderItem.nama}</span>
             <span className="d-block">Quantity Barang : {orderItem.quantity}</span>
             <span className="d-block">Harga Barang : {orderItem.harga}</span>
+            <span className="d-block">Total Harga : Rp. {orderItem.quantity * orderItem.harga}</span>
         </div>
         </div>
     )
