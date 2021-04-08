@@ -1,9 +1,9 @@
 import React from 'react';
 
-const FormOrder = ({setOrder, order, handleForm}) => {
+const FormOrder = ({setOrder, order, handleAddItem}) => {
     return (
         <div className="card shadow-lg p-5">
-            <form onSubmit={handleForm}>
+            <form onSubmit={handleAddItem}>
                 <div className="form-group">
                     <label htmlFor="namaBarang">Nama Barang</label>
                     <input type="text" name="namaBarang" id="namaBarang" className="form-control" onChange={e=>{setOrder({...order, nama:e.target.value})}} value={order.nama}/>
