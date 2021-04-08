@@ -1,41 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+import styled from "styled-components";
 
 import './OrderPage.css';
-
+import kasirAction from "../redux/actions/kasirAction";
 import FormOrder from "./FormOrder";
 import DisplayListItems from "./DisplayListItems";
 import TotalBelanja from "./TotalBelanja";
 
 const OrderPage = () => {
-    const [orderItems, setOrderItems] = useState([]);
+    const item = useSelector((state) => state);
 
     useEffect(() => {
-        console.log(orderItems);
-    }, [orderItems]);
-
-    const handleAddItem = (namaBarang, hargaBarang, quantity) => {
-        const newOrderItems = [
-            ...orderItems,
-            {
-                namaBarang,
-                hargaBarang,
-                quantity
-            }
-        ]
-        setOrderItems(newOrderItems);
-    }
+        console.log(item);
+    }, [item]);
 
     return (
-        <div className="root">
+        <div className="container">
             <FormOrder
-                handleAddItem={handleAddItem}
+            // handleAddItem={handleAddItem}
             />
-            <DisplayListItems 
-                orderItems={orderItems}
+            {/* <DisplayListItems
+            orderItems={orderItems}
             />
-            <TotalBelanja 
-                orderItems={orderItems}
-            />
+            <TotalBelanja
+            orderItems={orderItems}
+            /> */}
         </div>
     );
 };

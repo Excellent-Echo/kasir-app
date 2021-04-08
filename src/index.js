@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './App';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 import OrderPage from './components/OrderPage';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <OrderPage />
+    <Provider store={store}>
+      <OrderPage />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
