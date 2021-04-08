@@ -7,8 +7,9 @@ function TotalPriceItem({ orderItems }) {
   );
 
   return (
-    <div>
-      <h1>Total Item Price</h1>
+    <div className="bg-gray-200">
+      <hr />
+      <h1 className="text-xl">Total Item Price</h1>
       <h1>{nominalTotalHarga}</h1>
     </div>
   );

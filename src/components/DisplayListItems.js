@@ -2,8 +2,9 @@ import React from "react";
 
 function DisplayListItems({ orderItems }) {
   return (
-    <div>
-      <p>Display Items</p>
+    <div className="bg-yellow-100">
+      <hr />
+      <p className="text-xl">Display Items</p>
       <div>
         {orderItems.map((item, index) => (
           <div key={index}>

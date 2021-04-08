@@ -34,34 +34,40 @@ function FormOrder({ handleAddItem }) {
         <label>Input nama barang : </label>
         <br />
         <input
+          className="shadow appearance-none border py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-red-300"
           type="text"
           name="barang"
           placeholder="Input Barang"
           value={barang}
           onChange={(e) => setBarang(e.target.value)}
         />
-
+        <br />
         <br />
         <label>Input quantity barang : </label>
         <br />
         <input
+          className="shadow appearance-none border py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-red-300"
           type="number"
           name="quantity"
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
         />
-
+        <br />
         <br />
         <label>Input harga barang : </label>
         <br />
         <input
+          className="shadow appearance-none border py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-red-300"
           type="number"
           name="harga"
           value={harga}
           onChange={(e) => setHarga(e.target.value)}
         />
         <br />
-        <button>Pesan</button>
+        <br />
+        <button className="rounded bg-blue-500 hover:bg-blue-700 py-2 px-4 text-white">
+          Pesan
+        </button>
       </form>
     </div>
   );
