@@ -90,3 +90,26 @@ Release 1
 3. Lakukan buatlah sebuah function yang dapat melakukan pengolahan data props yang diterima, sehingga bisa mendapatkan nominal total harga yang harus dibayarkan oleh customer.
 4. Tampilkan hasil pengolahan data tersebut kedalam JSX.
 5. Lakukan uji coba, setiap submit form, apakah nominal total sudah sesuai ? Jika belum, periksa kembali function pengolahan data, pastikan bisa menghasilkan output yang sesuai. Jika sudah, maka selamat kamu sudah berhasil menyelesaikan release 5
+
+## Release 6
+
+​	Aplikasi sudah jadi dan bisa digunakan oleh kasir toko. Namun tugas kita belum selesai, kita harus memperbaiki kode kita agar bisa lebih rapih serta penggunaan state lebih bisa di prediksi menggunakan redux dan react-redux.
+
+1. Install redux & react redux
+2. Buatlah sebuah reducer, pastikan initial state dan action.type yang di daftarkan pada reducer ini sesuai dengan aplikasi yang kita punya. Setelah reducernya jadi, lanjutkan dengan membuat Store.
+3. Pastikan data dari store bisa di akses oleh semua component pada aplikasi ini.
+4. Ubah cara kita menyimpan data aplikasi, yang semulanya kita menyimpan state di dalam component OrderPage menjadi menggunakan Redux.
+5. Pastikan semua component yang menerima props, diubah menjadi subscribe data dari store.
+6. Pastikan juga action pada FormOrder akan menyimpan data kedalam Redux.
+7. Lakukan uji coba, apakah aplikasi masih bisa berjalan sesuai dengan yang di harapkan ? Juka belum, ayo kita evaluasi kembali penggunaan redux dan react-redux dalam aplikasi kita. Jika sudah, maka selamat kamu sudah berhasil menyelesaikan release 6.
+
+## Release 7
+
+​	Well done, aplikasi kita sudah berjalan sesuai dengan yang diharapkan, serta sudah menggunakan state management redux sehingga bisa lebih preictable perubahan data yang terjadi. Selanjutnya kita akan mempercantik layout aplikasi kita, sehingga bagus untuk dilihat.
+
+1. install styled-components agar kamu bisa lebih leluasa menggunakan fitur yang disediakan oleh CSS
+2. Styling components yang menurutmu perlu dilakukan styling (**Wajib menggunakan styled-components**)
+3. Gunakan CSS framework untuk mempermudah pekerjaan styling, bisa menggunakan bootstrap, tailwind, MaterialUI, dsb.....
+4. Untuk mempermudah pemilihan warna yang digunakan (Jika menggunakan warna), bisa menggunakan bantuan color palettes dari https://flatuicolors.com/
+5. Review kembali tampilan yang sudah kamu styling, pastikan owner toko kelontong suka dengan design aplikasi yang sudah kamu buat.
+
