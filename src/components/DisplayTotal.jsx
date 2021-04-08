@@ -1,6 +1,8 @@
-import React from 'react'
+import React from 'react';
+import {useSelector} from 'react-redux';
 
-const DisplayTotal = ({orderItems}) => {
+const DisplayTotal = () => {
+    const orderItems = useSelector(state => state.orders);
     const arrTotalHarga = orderItems.map((item)=>item.harga * item.quantity);
     const totalHarga = arrTotalHarga.reduce((total, harga)=>total + harga);
     return (
