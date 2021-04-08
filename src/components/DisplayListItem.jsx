@@ -1,6 +1,9 @@
-import React from 'react'
+import React from 'react';
+import { useSelector } from "react-redux";
+import ActionFormOrder from "../redux/action/actionFormOrder";
 
-const DisplayListItem = ({orderList}) => {
+const DisplayListItem = ({inputNamaBarang, inputQuantityBarang, inputHargaBarang}) => {
+    const ListOrder = useSelector((state) => state.ListOrder.ListOrder)
     return (
         <div>
             <table>
@@ -22,16 +25,18 @@ const DisplayListItem = ({orderList}) => {
                     </td>
                 </thead>
             
-            {orderList.map((item, index)=>{
+            {   
+                ListOrder &&
+                ListOrder.map((item, index)=>{
          
             return(   
                 <>    
                 <tbody>
-                    <td>{index+1}</td>
-                    <td>{item.inputNamaBarang}</td>
-                    <td>{item.inputQuantityBarang}</td>
-                    <td>{item.inputHargaBarang}</td>
-                    <td>{item.inputQuantityBarang * item.inputHargaBarang}</td>
+                    <td key={index}>{index+1}</td>
+                    <td>{inputNamaBarang}</td>
+                    <td>{inputQuantityBarang}</td>
+                    <td>{inputHargaBarang}</td>
+                    <td>{inputQuantityBarang * inputHargaBarang}</td>
                 </tbody>
                 </>
             )

@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
+import {  useSelector } from "react-redux";
 
-const TotalAllItem = ({ orderTotal }) => {
+const TotalAllItem = ({ total, inputQuantityBarang, inputHargaBarang }) => {
+    const totalAllItem  = useSelector((state) => state.totalAllItem.totalAllItem)
     let TotalAllItem = 0;
-    TotalAllItem = orderTotal.reduce((total, {inputQuantityBarang, inputHargaBarang}) => 
+    TotalAllItem = totalAllItem.reduce((total, {inputQuantityBarang, inputHargaBarang}) => 
     total + inputQuantityBarang * inputHargaBarang, TotalAllItem)
     return (
         <div>
@@ -11,4 +13,4 @@ const TotalAllItem = ({ orderTotal }) => {
     )
 }
 
-export default TotalAllItem
+export default TotalAllItem;

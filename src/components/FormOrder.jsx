@@ -1,22 +1,26 @@
-import React, {useState} from 'react';;
+import React, {useState} from 'react';
+import {useDispatch} from "react-redux";
+import actionFormOrder from "../redux/action/actionFormOrder";
 
-const FormOrder = ({handleAddItem}) => {
+const FormOrder = () => {
     const [inputNamaBarang, setNamaBarang] = useState("");
     const [inputQuantityBarang, setQuantityBarang] = useState("");
     const [inputHargaBarang, setHargaBarang] = useState("");
+
+    const dispatch = useDispatch();
 
     const handleFormOrder = (e) =>{
         e.preventDefault();
 
         
-        handleAddItem(inputNamaBarang, inputQuantityBarang, inputHargaBarang);
+        // handleAddItem(inputNamaBarang, inputQuantityBarang, inputHargaBarang);
+
+        dispatch(actionFormOrder.addItem(inputNamaBarang, inputQuantityBarang, inputHargaBarang));
 
         e.target.reset();
-
             setNamaBarang("");
             setQuantityBarang("");
             setHargaBarang("");
-        
     }
     return (
         <div>

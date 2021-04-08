@@ -4,10 +4,14 @@ import ReactDOM from 'react-dom';
 // import App from './App';
 // import reportWebVitals from './reportWebVitals';
 import OrderPage from './components/OrderPage';
+import store from "./redux/store";
+import { Provider } from "react-redux";
 
 ReactDOM.render(
   <React.StrictMode>
-    <OrderPage />
+    <Provider store={store}>
+        <OrderPage />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
