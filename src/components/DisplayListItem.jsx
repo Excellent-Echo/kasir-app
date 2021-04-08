@@ -20,9 +20,6 @@ const DisplayListItem = ({orderList}) => {
                     <td>
                         Total
                     </td>
-                    <td>
-                        Total All Item
-                    </td>
                 </thead>
             
             {orderList.map((item, index)=>{

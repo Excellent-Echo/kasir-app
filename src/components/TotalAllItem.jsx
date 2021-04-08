@@ -6,7 +6,7 @@ const TotalAllItem = ({ orderTotal }) => {
     total + inputQuantityBarang * inputHargaBarang, TotalAllItem)
     return (
         <div className="total-belanja">
-            <h3>Total Belanja: Rp {TotalAllItem}</h3>
+            <b><p>Total Belanja: Rp {TotalAllItem}</p></b>
         </div>
     )
 }
