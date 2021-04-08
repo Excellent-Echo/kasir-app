@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import FormOrder from '../components/FormOrder';
 import DisplayListItems from '../components/DisplayListItems';
-
+import DisplayTotal from '../components/DisplayTotal';
 const OrderPage = () => {
 
     const [order, setOrder] = useState({});
@@ -27,6 +27,7 @@ const OrderPage = () => {
                 <div className="col-12 col-md-6">
                     <h1 className="text-center">Input Order</h1>
                     <FormOrder setOrder={setOrder} order={order} handleAddItem={handleAddItem}/>
+                    <DisplayTotal orderItems = {orderItems}/>
                 </div>
                 <div className="col-12 col-md-6">
                     <h1 className="text-center">List Orders : </h1>
