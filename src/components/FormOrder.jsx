@@ -2,7 +2,7 @@ import React from 'react';
 
 const FormOrder = ({setOrder, order, handleAddItem}) => {
     return (
-        <div className="card shadow-lg p-5">
+        <div className="card shadow-lg p-5 mb-5">
             <form onSubmit={handleAddItem}>
                 <div className="form-group">
                     <label htmlFor="namaBarang">Nama Barang</label>
