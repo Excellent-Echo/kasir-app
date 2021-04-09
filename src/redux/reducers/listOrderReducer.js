@@ -1,18 +1,15 @@
-import {GET_LIST_ORDER} from '../actionType/actionTypes';
+import {SET_LIST_ORDER} from '../actionType/actionTypes';
 
 const initialState = {
-    listOrder: {
-        nama: '',
-        quantity: '',
-        price: '',
-    },
+    listOrder: []
 }
 
 const listOrderReducer = (state = initialState, action) => {
     switch (action.type) {
-        case GET_LIST_ORDER:
+        case SET_LIST_ORDER:
             return {
-                listOrder: action.payload,
+                ...state,
+                listOrder: [...state.listOrder, action.payload]
             }
         default: return state
     }

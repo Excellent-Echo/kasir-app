@@ -1,15 +1,15 @@
-import { GET_LIST_ORDER } from "../actionType/actionTypes"
+import { SET_LIST_ORDER } from "../actionType/actionTypes"
 
 
-const setListOrder = (nama,quantity,price)=> async dispatch =>{
-    dispatch({
-        type: GET_LIST_ORDER,
+const setListOrder = (nama,quantity,price)=>{
+    return {
+        type: SET_LIST_ORDER,
         payload: {
             nama: nama,
             quantity: quantity,
             price: price,
         },
-    })
+    };
 }
 
 const listOrderActions = {

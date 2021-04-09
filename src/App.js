@@ -10,7 +10,7 @@ import OrderPage from './pages/OrderPage'
 
 
 function App() {
-  const orderList = useSelector((state)=> state.listOrders.listOrder)
+
 
   return (
     <Router>
@@ -18,9 +18,7 @@ function App() {
       <Switch>
         <Route path='/'>
           <OrderPage/>
-          <p>{orderList.nama}</p>
-          <p>{orderList.quantity}</p>
-          <p>{orderList.price}</p>
+          
         </Route>
       </Switch>
       </div>

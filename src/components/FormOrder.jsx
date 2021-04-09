@@ -11,17 +11,22 @@ const FormOrder = () => {
     const name = useSelector((state)=> state.productNames.productName);
     const quantity = useSelector((state)=> state.productQuantities.productQuantity);
     const price = useSelector((state)=> state.productPrices.productPrice);
-    
+    const orderList = useSelector((state)=> state.listOrders.listOrder);
 
-    const handleFormOrder = (name,quantity,price) =>{
+    const handleFormOrder = (e) =>{
+        e.preventDefault();
+
         dispatch(listOrderActions.setListOrder(name,quantity,price));
-        //console.log(orderList)
+        dispatch(nameActions.setName(''));
+        dispatch(quantityActions.setQuantity(''))
+        dispatch(priceActions.setPrice(''))
+        console.log(orderList)
     }
 
     
 
     return (
-        <form onSubmit={handleFormOrder(name,quantity,price)}> 
+        <form onSubmit={handleFormOrder}> 
             <div>
                 <label>Name :</label>
                 <input 
