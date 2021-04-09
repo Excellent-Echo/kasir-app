@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import Swal from 'sweetalert2'
-
 import { Container, Row, Col, Button, Form, FormGroup, Label, Input } from 'reactstrap'
 
+import itemActions from '../redux/actions/itemActions'
+
 const FormOrder = ({ handleAddItem }) => {
-	const [item, setItem] = useState('')
-	const [quantity, setQuantity] = useState(0)
-	const [price, setPrice] = useState(0)
+	const dispatch = useDispatch()
+	const item = useSelector((state) => state.items.item)
+	const price = useSelector((state) => state.items.price)
+	const quantity = useSelector((state) => state.items.quantity)
 
 	const handleForm = (e) => {
 		e.preventDefault()
@@ -34,7 +37,7 @@ const FormOrder = ({ handleAddItem }) => {
 						name="inputItem"
 						id="inputItem"
 						placeholder="item name"
-						onChange={(e) => setItem(e.target.value)}
+						onChange={(e) => dispatch(itemActions.setItem(e.target.value))}
 						value={item}
 					/>
 				</FormGroup>
@@ -49,7 +52,7 @@ const FormOrder = ({ handleAddItem }) => {
 								id="inputQuantity"
 								placeholder="quantity"
 								min="1"
-								onChange={(e) => setQuantity(e.target.value)}
+								onChange={(e) => dispatch(itemActions.setQuantity(e.target.value))}
 								value={quantity}
 							/>
 						</FormGroup>
@@ -64,7 +67,7 @@ const FormOrder = ({ handleAddItem }) => {
 								id="inputPrice"
 								placeholder="price"
 								min="1"
-								onChange={(e) => setPrice(e.target.value)}
+								onChange={(e) => dispatch(itemActions.setPrice(e.target.value))}
 								value={price}
 							/>
 						</FormGroup>
