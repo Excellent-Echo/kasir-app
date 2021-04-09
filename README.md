@@ -1,4 +1,6 @@
-# Aplikasi Kasir (Mini Project React) 
+# Aplikasi Kasir (Mini Project React)
+
+[URL](https://agpw-react-cashregister.netlify.app/)
 
 Sebuah toko kelontong, memerlukan sistem kasir sederhana.
 Buatlah sebuah Form pemesanan sederhana yang bisa membantu kasir toko mencatat pesanan pelanggan dan menghitung total item dan total harga.
@@ -17,8 +19,6 @@ Release 1
     `~ input harga barang
     `~ button submit
     ```
-
-    
 
 4. Masukan form kedalam page OrderPage
 
