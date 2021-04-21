@@ -1,33 +1,36 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 
-const DisplayListItems = ({ orderItems }) => {
+const DisplayListItems = () => {
+    const items = useSelector((state) => state.list);
 
     return (
         <div className="container">
             <table>
-                <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>Nama Barang</th>
-                        <th>Harga (Rp)</th>
-                        <th>Quantity</th>
-                        <th>Total Harga (Rp)</th>
-                    </tr>
-                </thead>
-                {orderItems.map((item, index) => {
-                    return (
-                        <tbody>
-                            <tr>
+                {items.length > 0 &&
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Nama Barang</th>
+                            <th>Harga (Rp)</th>
+                            <th>Quantity</th>
+                            <th>Total Harga (Rp)</th>
+                        </tr>
+                    </thead>
+                }
+                <tbody>
+                    {items &&
+                        items.map((val, index) => {
+                            return <tr key={index}>
                                 <td>{index + 1}</td>
-                                <td>{item.namaBarang}</td>
-                                <td>{item.hargaBarang}</td>
-                                <td>{item.quantity}</td>
-                                <td>{item.quantity * item.hargaBarang}</td>
+                                <td>{val.nama}</td>
+                                <td>{Number(val.harga).toLocaleString()}</td>
+                                <td>{val.quantity}</td>
+                                <td>{(val.quantity * val.harga).toLocaleString()}</td>
                             </tr>
-                        </tbody>
-                    )
-                })}
+                        })}
+                </tbody>
             </table>
         </div>
     );

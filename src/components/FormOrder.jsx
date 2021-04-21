@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import kasirAction from "../redux/actions/kasirAction";
 import styled from "styled-components";
 
@@ -10,43 +10,23 @@ const FormOrder = () => {
     const [hargaBarang, setHargaBarang] = useState("");
     const [quantity, setQuantity] = useState("");
 
-    const item = useSelector((state) => state);
     const dispatch = useDispatch();
 
     const handleForm = (e) => {
         e.preventDefault();
 
-        dispatch(kasirAction.addItem(namaBarang, hargaBarang, quantity));
-
-        // if (!item.nama) {
-        //     alert("Nama Barang tidak boleh kosong");
-        //     return;
-        // } else if (!Number(item.harga) || !Number(item.quantity)) {
-        //     alert("Tipe data Harga Barang dan Quantity salah")
-        // }
-
-        // handleAddItem(item.nama, item.harga, item.quantity);
+        if (!Number(hargaBarang)) {
+            alert("Input harga barang salah")
+        } else if (!Number(quantity)) {
+            alert("Input quantity salah")
+        } else {
+            dispatch(kasirAction.addItem(namaBarang, hargaBarang, quantity));
+        }
 
         setNamaBarang("");
         setHargaBarang("");
         setQuantity("");
     }
-
-    // const handleForm = (e) => {
-    //     e.preventDefault();
-
-    //     if (!namaBarang || !Number(hargaBarang) || !Number(quantity)) {
-    //         alert("Nama Barang tidak boleh kosong/Tipe data Harga Barang dan Quantity salah")
-    //         return;
-    //     }
-
-    //     handleAddItem(namaBarang, hargaBarang, quantity);
-
-    //     setNamaBarang("");
-    //     setHargaBarang("");
-    //     setQuantity("");
-    // }
-
 
     return (
         <form onSubmit={handleForm}>

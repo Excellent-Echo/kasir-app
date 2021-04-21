@@ -3,29 +3,25 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 import './OrderPage.css';
-import kasirAction from "../redux/actions/kasirAction";
 import FormOrder from "./FormOrder";
 import DisplayListItems from "./DisplayListItems";
 import TotalBelanja from "./TotalBelanja";
 
 const OrderPage = () => {
-    const item = useSelector((state) => state);
+    const items = useSelector((state) => state.list);
 
     useEffect(() => {
-        console.log(item);
-    }, [item]);
+        console.log(items);
+    }, [items]);
 
     return (
         <div className="container">
             <FormOrder
-            // handleAddItem={handleAddItem}
             />
-            {/* <DisplayListItems
-            orderItems={orderItems}
+            <DisplayListItems
             />
             <TotalBelanja
-            orderItems={orderItems}
-            /> */}
+            />
         </div>
     );
 };

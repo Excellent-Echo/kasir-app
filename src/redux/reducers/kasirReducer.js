@@ -1,18 +1,14 @@
 const initState = {
-  nama: "",
-  harga: 0,
-  quantity: 0,
-};
+  list: []
+}
 
 const kasirReducer = (state = initState, action) => {
   switch (action.type) {
     case "ADD_ITEM":
       return {
         ...state,
-        nama: action.payload.nama,
-        harga: action.payload.harga,
-        quantity: action.payload.quantity,
-      };
+        list: [...state.list, action.payload]
+      }
     default:
       return state;
   }

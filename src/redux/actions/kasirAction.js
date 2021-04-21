@@ -4,7 +4,7 @@ const addItem = (namaBarang, hargaBarang, quantity) => {
     payload: {
       nama: namaBarang,
       harga: hargaBarang,
-      quantity: quantity,
+      quantity: quantity,    
     },
   };
 };
