@@ -1,9 +1,20 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import './OrderPage.css';
+import { makeStyles } from '@material-ui/core/styles';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
+
 
 const TotalBelanja = () => {
+    const useStyles = makeStyles({
+        table: {
+            minWidth: 650,
+        },
+    });
+
+    const classes = useStyles();
+
     const items = useSelector((state) => state.list);
     let sum = 0
 
@@ -18,9 +29,10 @@ const TotalBelanja = () => {
     return (
         <>
             {items.length > 0 &&
-                <div className="total-belanja">
-                    <h3>Total Belanja: Rp {total()}</h3>
-                </div>
+                <TableRow>
+                    <TableCell align="right" colSpan={4} className="font-weight-bold">Total (Rp)</TableCell>
+                    <TableCell align="right">{total()}</TableCell>
+                </TableRow>
             }
         </>
     )

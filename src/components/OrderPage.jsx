@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import styled from "styled-components";
 
-import './OrderPage.css';
 import FormOrder from "./FormOrder";
 import DisplayListItems from "./DisplayListItems";
-import TotalBelanja from "./TotalBelanja";
+import logo from "../assets/cashier-app.png"
+import GlobalStyles from "../styles/globalStyle";
+
 
 const OrderPage = () => {
     const items = useSelector((state) => state.list);
@@ -15,14 +15,18 @@ const OrderPage = () => {
     }, [items]);
 
     return (
+        <>
+        <GlobalStyles />
         <div className="container">
+            <div className="row">
+                <img src={logo} alt="logo" className="img-fluid mt-5 w-50 mx-auto"/>
+            </div>
             <FormOrder
             />
             <DisplayListItems
             />
-            <TotalBelanja
-            />
         </div>
+        </>
     );
 };
 

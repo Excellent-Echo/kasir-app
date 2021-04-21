@@ -1,11 +1,23 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import kasirAction from "../redux/actions/kasirAction";
-import styled from "styled-components";
 
-import './FormOrder.css';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
 
 const FormOrder = () => {
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            '& .MuiTextField-root': {
+                margin: theme.spacing(1),
+                width: '25ch',
+            },
+        },
+    }));
+
+    const classes = useStyles();
+
     const [namaBarang, setNamaBarang] = useState("");
     const [hargaBarang, setHargaBarang] = useState("");
     const [quantity, setQuantity] = useState("");
@@ -29,39 +41,34 @@ const FormOrder = () => {
     }
 
     return (
-        <form onSubmit={handleForm}>
-            <div className="nama-barang">
-                <label>Nama Barang</label>
-                <input
-                    type="text"
-                    className="namaBarang"
-                    value={namaBarang}
-                    onChange={(e) => setNamaBarang(e.target.value)}
-                />
-            </div>
-            <div className="harga-barang">
-                <label>Harga Barang</label>
-                <input
-                    type="text"
-                    className="hargaBarang"
-                    value={hargaBarang}
-                    onChange={(e) => setHargaBarang(e.target.value)}
-
-                />
-            </div>
-            <div className="qty-barang">
-                <label>Quantity</label>
-                <input
-                    type="text"
-                    id="qtyBarang"
-                    value={quantity}
-                    onChange={(e) => setQuantity(e.target.value)}
-                />
-            </div>
-            <div className="button-submit">
-                <input type="submit" value="Submit" />
-            </div>
-        </form>
+        <>
+            <form onSubmit={handleForm} className={classes.root} noValidate autoComplete="off">
+                <div className="mt-5 d-flex flex-column align-items-center">
+                    <TextField
+                        id="outlined-input"
+                        label="Nama Barang"
+                        variant="outlined"
+                        value={namaBarang}
+                        onChange={(e) => setNamaBarang(e.target.value)}
+                    />
+                    <TextField
+                        id="outlined-input"
+                        label="Harga Barang"
+                        variant="outlined"
+                        value={hargaBarang}
+                        onChange={(e) => setHargaBarang(e.target.value)}
+                    />
+                    <TextField
+                        id="outlined-input"
+                        label="Quantity"
+                        variant="outlined"
+                        value={quantity}
+                        onChange={(e) => setQuantity(e.target.value)}
+                    />
+                    <Button type="submit" value="Submit" variant="contained">Submit</Button>
+                </div>
+            </form>
+        </>
     );
 };
 
